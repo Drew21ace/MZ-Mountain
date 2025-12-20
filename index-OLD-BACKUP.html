@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MZ Mountain Construction LLC - Professional commercial construction services in Fayetteville, AR specializing in demolition, framing, drywall, and specialty projects. 15+ years of experience.">
-    <meta name="keywords" content="commercial construction, demolition, framing, drywall, Fayetteville AR, construction services">
-    <title>MZ Mountain Construction LLC - Commercial Construction Services</title>
-    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <title>MZ Mountain Construction LLC</title>
     <style>
         :root {
             --forest-green: #1a4d2e;
@@ -81,11 +78,6 @@
             justify-content: center;
             padding: 8rem 5% 5rem 5%;
             margin-top: 82px;
-        }
-        
-        /* Ensure sections don't hide under fixed nav when using anchor links */
-        section {
-            scroll-margin-top: 100px;
         }
 
         .hero-content {
@@ -376,16 +368,6 @@
             line-height: 1.6;
         }
 
-        .contact-item a {
-            color: var(--medium-gray);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .contact-item a:hover {
-            color: var(--forest-green);
-        }
-
         .contact-form {
             background: var(--off-white);
             padding: 2.5rem;
@@ -535,7 +517,7 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <img src="logo.jpg" alt="MZ Mountain Construction LLC" class="logo">
+            <img src="logo.png" alt="MZ Mountain Construction LLC" class="logo">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -554,7 +536,7 @@
                 <a href="#contact" class="cta-button">Get a Quote</a>
             </div>
             <div class="hero-logo-container">
-                <img src="logo.jpg" alt="MZ Mountain Construction LLC" class="hero-logo">
+                <img src="logo.png" alt="MZ Mountain Construction LLC" class="hero-logo">
             </div>
         </div>
     </section>
@@ -591,11 +573,11 @@
         <h2>Our Projects</h2>
         <p class="section-subtitle">Explore our recent commercial construction work</p>
         <div class="projects-grid">
-            <!-- Project 1: Whole Pet TI -->
+            <!-- Project 1: Commercial Interior -->
             <div class="project-card" onclick="openProject('project1')">
-                <img src="gallery1.jpg" alt="Whole Pet TI Project">
+                <img src="gallery1.jpg" alt="Commercial Interior Project">
                 <div class="project-overlay">
-                    <h3>Whole Pet TI</h3>
+                    <h3>Commercial Interior Build-Out</h3>
                     <p>8 Photos</p>
                 </div>
             </div>
@@ -611,20 +593,20 @@
         </div>
     </section>
 
-    <!-- Project Modal 1: Whole Pet TI -->
+    <!-- Project Modal 1: Commercial Interior -->
     <div id="project1" class="project-modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeProject('project1')">&times;</span>
-            <h2>Whole Pet TI</h2>
+            <h2>Commercial Interior Build-Out</h2>
             <div class="modal-gallery">
-                <img src="gallery1.jpg" alt="Whole Pet TI 1">
-                <img src="gallery2.jpg" alt="Whole Pet TI 2">
-                <img src="gallery3.jpg" alt="Whole Pet TI 3">
-                <img src="gallery4.jpg" alt="Whole Pet TI 4">
-                <img src="gallery5.jpg" alt="Whole Pet TI 5">
-                <img src="gallery6.jpg" alt="Whole Pet TI 6">
-                <img src="gallery7.jpg" alt="Whole Pet TI 7">
-                <img src="gallery8.jpg" alt="Whole Pet TI 8">
+                <img src="gallery1.jpg" alt="Commercial Interior 1">
+                <img src="gallery2.jpg" alt="Commercial Interior 2">
+                <img src="gallery3.jpg" alt="Commercial Interior 3">
+                <img src="gallery4.jpg" alt="Commercial Interior 4">
+                <img src="gallery5.jpg" alt="Commercial Interior 5">
+                <img src="gallery6.jpg" alt="Commercial Interior 6">
+                <img src="gallery7.jpg" alt="Commercial Interior 7">
+                <img src="gallery8.jpg" alt="Commercial Interior 8">
             </div>
         </div>
     </div>
@@ -661,7 +643,7 @@
                     <div class="contact-icon">✉️</div>
                     <div>
                         <h3>Email</h3>
-                        <p><a href="mailto:mzllc@outlook.com">mzllc@outlook.com</a></p>
+                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="abe6d1c6c4dec5dfcac2c5ebc4dedfc7c4c4c085c8c4c6">[email&#160;protected]</a></p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -680,13 +662,7 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form action="https://formsubmit.co/mzllc@outlook.com" method="POST">
-                    <!-- FormSubmit Configuration -->
-                    <input type="hidden" name="_subject" value="New Website Inquiry - MZ Mountain Construction">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="text" name="_honey" style="display:none">
-                    
+                <form id="contactForm">
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" name="name" placeholder="Your Name" required>
@@ -704,6 +680,7 @@
                         <textarea name="message" placeholder="Tell us about your project..." required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
+                    <p id="formStatus" style="margin-top: 1rem; font-size: 0.9rem;"></p>
                 </form>
             </div>
         </div>
@@ -711,10 +688,60 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 MZ Mountain Construction LLC. All rights reserved.</p>
+        <p>&copy; 2024 MZ Mountain Construction LLC. All rights reserved.</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Contact Form Submission Handler
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxfsQhQTwl-K20-zs8De_ku70OPB1ydjF9bAOirN9tk0bAY7ZoHJEBzOoWlwINAfvluUg/exec';
+        const form = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(form);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone') || 'Not provided',
+                    message: formData.get('message')
+                };
+
+                // Show loading message
+                formStatus.textContent = 'Sending...';
+                formStatus.style.color = '#7f8c8d';
+
+                try {
+                    const response = await fetch(scriptURL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    // Success message
+                    formStatus.textContent = 'Thank you! Your message has been sent successfully.';
+                    formStatus.style.color = '#1a4d2e';
+                    form.reset();
+
+                    // Clear success message after 5 seconds
+                    setTimeout(() => {
+                        formStatus.textContent = '';
+                    }, 5000);
+
+                } catch (error) {
+                    // Error message
+                    formStatus.textContent = 'Oops! Something went wrong. Please try again or call us directly.';
+                    formStatus.style.color = '#e74c3c';
+                }
+            });
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -732,40 +759,17 @@
         // Project modal functions
         function openProject(projectId) {
             const modal = document.getElementById(projectId);
-            if (modal) {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeProject(projectId) {
             const modal = document.getElementById(projectId);
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
 
-        // Close modal when clicking outside the content (clicking on the dark background)
+        // Close modal when clicking outside the content
         document.querySelectorAll('.project-modal').forEach(modal => {
             modal.addEventListener('click', function(e) {
-                // Only close if clicking directly on the modal (dark background), not the content
-                if (e.target === this) {
-                    const modalId = this.getAttribute('id');
-                    closeProject(modalId);
-                }
-            });
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.project-modal.active').forEach(modal => {
-                    const modalId = modal.getAttribute('id');
-                    closeProject(modalId);
-                });
-            }
-        });
-    </script>
-</body>
-</html>
+       

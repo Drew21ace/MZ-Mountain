@@ -680,13 +680,7 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form action="https://formsubmit.co/mzllc@outlook.com" method="POST">
-                    <!-- FormSubmit Configuration -->
-                    <input type="hidden" name="_subject" value="New Website Inquiry - MZ Mountain Construction">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="text" name="_honey" style="display:none">
-                    
+                <form id="contactForm">
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" name="name" placeholder="Your Name" required>
@@ -705,6 +699,7 @@
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
+                <p id="formStatus" style="margin-top: 1rem; font-size: 0.9rem; font-weight: 500;"></p>
             </div>
         </div>
     </section>
@@ -715,6 +710,56 @@
     </footer>
 
     <script>
+        // Contact Form Submission Handler
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxfsQhQTwl-K20-zs8De_ku70OPB1ydjF9bAOirN9tk0bAY7ZoHJEBzOoWlwINAfvluUg/exec';
+        const form = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(form);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone') || 'Not provided',
+                    message: formData.get('message')
+                };
+
+                // Show loading message
+                formStatus.textContent = 'Sending...';
+                formStatus.style.color = '#7f8c8d';
+
+                try {
+                    const response = await fetch(scriptURL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    // Success message (note: mode: 'no-cors' means we can't check actual response)
+                    formStatus.textContent = 'Thank you! Your message has been sent successfully.';
+                    formStatus.style.color = '#1a4d2e';
+                    form.reset();
+
+                    // Clear success message after 5 seconds
+                    setTimeout(() => {
+                        formStatus.textContent = '';
+                    }, 5000);
+
+                } catch (error) {
+                    // Error message
+                    formStatus.textContent = 'Oops! Something went wrong. Please try again or call us directly.';
+                    formStatus.style.color = '#e74c3c';
+                }
+            });
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
