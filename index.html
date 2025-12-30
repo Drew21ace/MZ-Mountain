@@ -459,6 +459,34 @@
             font-size: 0.9rem;
         }
 
+        /* Sticky CTA Button */
+        .sticky-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .sticky-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .sticky-cta .cta-button {
+            box-shadow: 0 4px 20px rgba(26, 77, 46, 0.4);
+            font-size: 0.95rem;
+            padding: 1rem 2rem;
+        }
+
+        .sticky-cta .cta-button:hover {
+            box-shadow: 0 6px 25px rgba(26, 77, 46, 0.5);
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
             nav ul {
@@ -527,6 +555,16 @@
                 top: 1rem;
                 right: 1.5rem;
                 font-size: 2.5rem;
+            }
+
+            .sticky-cta {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .sticky-cta .cta-button {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -608,6 +646,15 @@
                     <p>5 Photos</p>
                 </div>
             </div>
+
+            <!-- Project 3: Clothe Boutique TI -->
+            <div class="project-card" onclick="openProject('project3')">
+                <img src="boutique-1.jpg" alt="Clothe Boutique TI">
+                <div class="project-overlay">
+                    <h3>Clothe Boutique TI</h3>
+                    <p>6 Photos</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -644,6 +691,22 @@
         </div>
     </div>
 
+    <!-- Project Modal 3: Clothe Boutique TI -->
+    <div id="project3" class="project-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeProject('project3')">&times;</span>
+            <h2>Clothe Boutique TI</h2>
+            <div class="modal-gallery">
+                <img src="boutique-1.jpg" alt="Clothe Boutique 1">
+                <img src="boutique-2.jpg" alt="Clothe Boutique 2">
+                <img src="boutique-3.jpg" alt="Clothe Boutique 3">
+                <img src="boutique-4.jpg" alt="Clothe Boutique 4">
+                <img src="boutique-5.jpg" alt="Clothe Boutique 5">
+                <img src="boutique-6.jpg" alt="Clothe Boutique 6">
+            </div>
+        </div>
+    </div>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2>Contact Us</h2>
@@ -661,7 +724,7 @@
                     <div class="contact-icon">✉️</div>
                     <div>
                         <h3>Email</h3>
-                        <p><a href="mailto:mzmountain@outlook.com">mzmountain@outlook.com
+                        <p><a href="/cdn-cgi/l/email-protection#c3aeb9aeacb6adb7a2aaad83acb6b7afacaca8eda0acae"><span class="__cf_email__" data-cfemail="afc2d5c2c0dac1dbcec6c1efc0dadbc3c0c0c481ccc0c2">[email&#160;protected]</span>
 </a></p>
                     </div>
                 </div>
@@ -710,12 +773,17 @@
         </div>
     </section>
 
+    <!-- Sticky CTA Button -->
+    <div class="sticky-cta" id="stickyCta">
+        <a href="#contact" class="cta-button">Get a Quote</a>
+    </div>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 MZ Mountain Construction LLC. All rights reserved.</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -767,7 +835,27 @@
                 });
             }
         });
+
+        // Sticky CTA Button - Show after scrolling past hero
+        const stickyCta = document.getElementById('stickyCta');
+        const heroSection = document.querySelector('.hero');
+
+        function handleStickyCtaVisibility() {
+            if (!heroSection || !stickyCta) return;
+            
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            
+            // Show sticky CTA after scrolling past the hero section
+            if (window.scrollY > heroBottom - 200) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        }
+
+        // Check on scroll and initial load
+        window.addEventListener('scroll', handleStickyCtaVisibility);
+        window.addEventListener('load', handleStickyCtaVisibility);
     </script>
 </body>
 </html>
-<!-- trigger deploy -->
