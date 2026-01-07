@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MZ Mountain Construction LLC - Professional commercial construction services in Fayetteville, AR specializing in demolition, framing, drywall, and specialty projects. 15+ years of experience.">
-    <meta name="keywords" content="commercial construction, demolition, framing, drywall, Fayetteville AR, construction services">
+    <meta name="description" content="MZ Mountain Construction LLC - Expert commercial construction in Fayetteville, AR specializing in metal framing, drywall installation, demolition, acoustical ceilings, and specialty projects. 15+ years of experience serving Northwest Arkansas.">
+    <meta name="keywords" content="metal framing, drywall installation, demolition, acoustical ceilings, commercial construction, tenant improvements, Fayetteville AR, Northwest Arkansas, construction services">
     <title>MZ Mountain Construction LLC - Commercial Construction Services</title>
     <link rel="icon" type="image/jpeg" href="logo.jpg">
     <style>
@@ -156,6 +156,57 @@
             color: var(--medium-gray);
             font-size: 1.1rem;
             margin-bottom: 3rem;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--white);
+        }
+
+        .services h2,
+        .services .section-subtitle {
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--off-white);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-gray);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border-color: var(--forest-green);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            filter: grayscale(20%);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         /* About Section */
@@ -507,6 +558,10 @@
                 font-size: 2rem;
             }
 
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
             .about-content,
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -576,6 +631,7 @@
             <img src="logo.jpg" alt="MZ Mountain Construction LLC" class="logo">
             <ul>
                 <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#gallery">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -588,11 +644,48 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>MZ Mountain Construction LLC</h1>
-                <p>Professional commercial construction services specializing in demolition, framing, drywall, and specialty projects.</p>
+                <p>Expert commercial construction serving Northwest Arkansas. Specializing in metal framing, drywall installation, demolition, acoustical ceilings, and specialty tenant improvements.</p>
                 <a href="#contact" class="cta-button">Get a Quote</a>
             </div>
             <div class="hero-logo-container">
                 <img src="logo.jpg" alt="MZ Mountain Construction LLC" class="hero-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2>Our Specialties</h2>
+        <p class="section-subtitle">Expert commercial construction services for Northwest Arkansas</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔨</div>
+                <h3>Metal Framing</h3>
+                <p>Precision structural metal framing for commercial buildings. We create the backbone of your space with expert steel stud installation and load-bearing metal framework.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🧱</div>
+                <h3>Drywall Installation</h3>
+                <p>Professional drywall hanging, taping, and finishing. From smooth walls to textured finishes, we deliver flawless surfaces ready for paint.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">💥</div>
+                <h3>Demolition</h3>
+                <p>Safe and efficient commercial demolition services. We handle interior teardowns, selective demolition, and complete space clearing for renovations.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">📐</div>
+                <h3>Acoustical Ceilings</h3>
+                <p>Expert installation of acoustical ceiling systems, drop ceilings, and sound-dampening solutions. Perfect for offices, restaurants, and retail spaces.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Specialty Projects</h3>
+                <p>Custom tenant improvements, built-ins, specialty installations, and unique construction challenges. We bring your vision to life with precision craftsmanship.</p>
             </div>
         </div>
     </section>
@@ -603,8 +696,8 @@
         <p class="section-subtitle">Building quality commercial spaces across the region</p>
         <div class="about-content">
             <div class="about-text">
-                <p>MZ Mountain Construction LLC is a trusted leader in commercial construction, delivering exceptional craftsmanship across demolition, framing, drywall, and specialty projects. With over 15 years of experience, we bring expertise and precision to every job site, transforming visions into reality for businesses throughout the region.</p>
-                <p>From ground-up construction to complete renovations, our skilled team handles every phase with meticulous attention to detail. Whether it's structural framing that forms the backbone of your space, seamless drywall finishing that perfects every surface, or specialized installations that set your project apart, we execute with the highest standards of quality and safety.</p>
+                <p>MZ Mountain Construction LLC is a trusted leader in commercial construction across Northwest Arkansas, delivering exceptional craftsmanship in metal framing, drywall installation, demolition, acoustical ceilings, and specialty tenant improvements. With over 15 years of experience, we bring expertise and precision to every job site, transforming visions into reality for businesses throughout the region.</p>
+                <p>From ground-up construction to complete renovations, our skilled team handles every phase with meticulous attention to detail. Whether it's precision metal framing that forms the structural backbone of your space, seamless drywall installation and finishing, expert acoustical ceiling systems, or safe and efficient demolition services, we execute with the highest standards of quality and safety.</p>
                 <p>We pride ourselves on building lasting partnerships with our clients through honest communication, reliable timelines, and superior workmanship. When you choose MZ Mountain Construction, you're choosing a team committed to excellence from demolition to final walkthrough.</p>
             </div>
             <div class="about-stats">
