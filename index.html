@@ -170,9 +170,25 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(6, 1fr);
             gap: 2rem;
             margin-top: 3rem;
+        }
+
+        /* First 3 cards span 2 columns each (fills the row) */
+        .service-card:nth-child(1),
+        .service-card:nth-child(2),
+        .service-card:nth-child(3) {
+            grid-column: span 2;
+        }
+
+        /* Bottom 2 cards centered: start at column 2 and 4, each spanning 2 columns */
+        .service-card:nth-child(4) {
+            grid-column: 2 / 4;
+        }
+
+        .service-card:nth-child(5) {
+            grid-column: 4 / 6;
         }
 
         .service-card {
@@ -562,6 +578,15 @@
                 grid-template-columns: 1fr;
             }
 
+            /* Reset service card positioning on mobile */
+            .service-card:nth-child(1),
+            .service-card:nth-child(2),
+            .service-card:nth-child(3),
+            .service-card:nth-child(4),
+            .service-card:nth-child(5) {
+                grid-column: 1;
+            }
+
             .about-content,
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -667,7 +692,7 @@
             <div class="service-card">
                 <div class="service-icon">🧱</div>
                 <h3>Drywall Installation</h3>
-                <p>Professional drywall hanging, taping, and finishing. From smooth walls to textured finishes, we deliver flawless surfaces ready for paint.</p>
+                <p>Expert drywall hanging and corner bead installation. We deliver precise board placement and professional corner protection for your commercial space.</p>
             </div>
             
             <div class="service-card">
